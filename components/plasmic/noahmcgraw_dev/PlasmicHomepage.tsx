@@ -1547,7 +1547,7 @@ function PlasmicHomepage__RenderFunc(props: {
                         displayWidth={"auto"}
                         loading={"lazy"}
                         src={{
-                          src: "/plasmic/noahmcgraw_dev/images/fullStackDeveloperpng.png",
+                          src: "/plasmic/noahmcgraw_dev/images/fullStackDeveloper1Png.png",
                           fullWidth: 1545,
                           fullHeight: 2000,
                           aspectRatio: undefined
@@ -1640,7 +1640,7 @@ function PlasmicHomepage__RenderFunc(props: {
                           )}
                           component={Link}
                           href={
-                            "https://ngmstudio-wp-assets.s3.us-east-2.amazonaws.com/noahmcgraw/2024/07/17231832/Full-Stack-Developer.pdf"
+                            "https://ngmstudio-wp-assets.s3.us-east-2.amazonaws.com/noahmcgraw/2024/07/17231832/Full-Stack+Developer+(1).pdf"
                           }
                           platform={"nextjs"}
                           target={"_blank"}
