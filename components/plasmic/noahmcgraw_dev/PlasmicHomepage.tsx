@@ -1539,7 +1539,7 @@ function PlasmicHomepage__RenderFunc(props: {
                       <PlasmicImg__
                         alt={""}
                         className={classNames(sty.img__p4Yh)}
-                        displayHeight={"auto"}
+                        displayHeight={"100%"}
                         displayMaxHeight={"none"}
                         displayMaxWidth={"100%"}
                         displayMinHeight={"0"}
