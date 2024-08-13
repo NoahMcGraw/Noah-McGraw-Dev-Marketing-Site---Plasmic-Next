@@ -59,6 +59,7 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import { PlasmicHead } from "@plasmicapp/react-web";
 import { Reveal } from "@plasmicpkgs/react-awesome-reveal";
 import NavDropdown from "../../NavDropdown"; // plasmic-import: JaxdPnyBZWaI/component
 import { CmsQueryRepeater } from "@plasmicpkgs/plasmic-cms";
@@ -96,6 +97,7 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
   root?: Flex__<"div">;
+  pageMetadataOverride?: Flex__<typeof PlasmicHead>;
   navDropdown?: Flex__<typeof NavDropdown>;
   lottie?: Flex__<typeof LottieWrapper>;
   embedHtml?: Flex__<typeof Embed>;
@@ -168,7 +170,20 @@ function PlasmicHomepage__RenderFunc(props: {
 
   return (
     <React.Fragment>
-      <Head></Head>
+      <Head>
+        <meta name="twitter:card" content="summary" />
+        <title key="title">{PlasmicHomepage.pageMetadata.title}</title>
+        <meta
+          key="og:title"
+          property="og:title"
+          content={PlasmicHomepage.pageMetadata.title}
+        />
+        <meta
+          key="twitter:title"
+          name="twitter:title"
+          content={PlasmicHomepage.pageMetadata.title}
+        />
+      </Head>
 
       <style>{`
         body {
@@ -192,6 +207,17 @@ function PlasmicHomepage__RenderFunc(props: {
             sty.root
           )}
         >
+          <PlasmicHead
+            data-plasmic-name={"pageMetadataOverride"}
+            data-plasmic-override={overrides.pageMetadataOverride}
+            className={classNames("__wab_instance", sty.pageMetadataOverride)}
+            description={
+              "From Idea to Interface - Let's Build Something Together!"
+            }
+            image={"/plasmic/noahmcgraw_dev/images/noahPili48Cropped1Jpg.jpg"}
+            title={"Noah McGraw - Full Stack Software Engineer"}
+          />
+
           <Reveal
             className={classNames("__wab_instance", sty.reveal__wb87F)}
             delay={3000}
@@ -1679,6 +1705,7 @@ function PlasmicHomepage__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
+    "pageMetadataOverride",
     "navDropdown",
     "lottie",
     "embedHtml",
@@ -1692,6 +1719,7 @@ const PlasmicDescendants = {
     "autoLingo",
     "skillShotGolf"
   ],
+  pageMetadataOverride: ["pageMetadataOverride"],
   navDropdown: ["navDropdown"],
   lottie: ["lottie"],
   embedHtml: ["embedHtml"],
@@ -1718,6 +1746,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  pageMetadataOverride: typeof PlasmicHead;
   navDropdown: typeof NavDropdown;
   lottie: typeof LottieWrapper;
   embedHtml: typeof Embed;
@@ -1792,6 +1821,7 @@ export const PlasmicHomepage = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    pageMetadataOverride: makeNodeComponent("pageMetadataOverride"),
     navDropdown: makeNodeComponent("navDropdown"),
     lottie: makeNodeComponent("lottie"),
     embedHtml: makeNodeComponent("embedHtml"),
@@ -1811,7 +1841,7 @@ export const PlasmicHomepage = Object.assign(
 
     // Page metadata
     pageMetadata: {
-      title: "",
+      title: "Noah McGraw - Full Stack Software Engineer",
       description: "",
       ogImageSrc: "",
       canonical: ""
