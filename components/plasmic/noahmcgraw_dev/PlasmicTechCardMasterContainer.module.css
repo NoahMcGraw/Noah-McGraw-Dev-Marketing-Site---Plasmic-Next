@@ -245,17 +245,26 @@
 .freeBox___9NGzp {
   display: flex;
   flex-direction: row;
-  position: absolute;
+  position: relative;
   align-items: center;
   justify-content: flex-start;
   width: auto;
   height: auto;
   max-width: 100%;
-  left: 0;
+  left: auto;
   top: auto;
-  right: 0;
-  bottom: 0;
+  right: auto;
+  bottom: auto;
   padding: 16px 48px;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .freeBox___9NGzp {
+    position: relative;
+    left: auto;
+    top: auto;
+    bottom: auto;
+    right: auto;
+  }
 }
 .link {
   position: relative;
